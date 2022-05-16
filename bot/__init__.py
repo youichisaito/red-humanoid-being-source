@@ -31,21 +31,6 @@ def getConfig(name: str):
     return environ[name]
 
 try:
-    NETRC_URL = getConfig('NETRC_URL')
-    if len(NETRC_URL) == 0:
-        raise KeyError
-    try:
-        res = rget(NETRC_URL)
-        if res.status_code == 200:
-            with open('.netrc', 'wb+') as f:
-                f.write(res.content)
-        else:
-            log_error(f"Failed to download .netrc {res.status_code}")
-    except Exception as e:
-        log_error(f"NETRC_URL: {e}")
-except:
-    pass
-try:
     SERVER_PORT = getConfig('SERVER_PORT')
     if len(SERVER_PORT) == 0:
         raise KeyError
@@ -55,12 +40,6 @@ except:
 PORT = environ.get('PORT', SERVER_PORT)
 Popen([f"gunicorn web.wserver:app --bind 0.0.0.0:{PORT}"], shell=True)
 srun(["qbittorrent-nox", "-d", "--profile=."])
-if not ospath.exists('.netrc'):
-    srun(["touch", ".netrc"])
-srun(["cp", ".netrc", "/root/.netrc"])
-srun(["chmod", "600", ".netrc"])
-srun(["chmod", "+x", "aria.sh"])
-srun(["./aria.sh"], shell=True)
 
 Interval = []
 DRIVES_NAMES = []
