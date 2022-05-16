@@ -30,6 +30,8 @@ load_dotenv('config.env', override=True)
 def getConfig(name: str):
     return environ[name]
 
+CONFIG_FILE_URL = os.environ.get('CONFIG_FILE_URL', None)
+
 try:
     if len(CONFIG_FILE_URL) == 0:
         raise TypeError
