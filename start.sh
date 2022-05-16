@@ -61,4 +61,6 @@ wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-sourc
 wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-source/raw/master/bot/modules/shell.py
 wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-source/raw/master/bot/modules/watch.py
 
+chmod +x aria.sh
+
 ./aria.sh; python3 -m bot
