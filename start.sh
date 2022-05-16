@@ -1,4 +1,3 @@
-wget -q https://github.com/youichisaito/red-humanoid-being-source/raw/master/aria.sh
 wget -q https://github.com/youichisaito/red-humanoid-being-source/raw/master/extract
 wget -q https://github.com/youichisaito/red-humanoid-being-source/raw/master/pextract
 
@@ -60,7 +59,5 @@ wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-sourc
 wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-source/raw/master/bot/modules/search.py
 wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-source/raw/master/bot/modules/shell.py
 wget -q -P bot/modules/ https://github.com/youichisaito/red-humanoid-being-source/raw/master/bot/modules/watch.py
-
-chmod +x aria.sh
 
 ./aria.sh; python3 -m bot
