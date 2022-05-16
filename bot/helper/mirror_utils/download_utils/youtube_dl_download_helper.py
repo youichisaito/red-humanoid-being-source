@@ -56,7 +56,7 @@ class YoutubeDLHelper:
         self.__resource_lock = RLock()
         self.opts = {'progress_hooks': [self.__onDownloadProgress],
                      'logger': MyLogger(self),
-                     'usenetrc': True,
+                     'usenetrc': False,
                      'embedsubtitles': True,
                      'prefer_ffmpeg': True,
                      'cookiefile': 'cookies.txt'}
